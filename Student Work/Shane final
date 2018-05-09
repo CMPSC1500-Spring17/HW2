@@ -1,0 +1,182 @@
+************* Problem One **********
+
+
+public class Boxtext { 
+  
+	/* Prompt: Given a sentence. Convert to one word per line w/ box around text
+	/  Points of Interest:
+	/  - User Input required
+	/  - Words operate on independent lines
+	/  - Need to construct "+" and "-" borders on top and bottom of text
+	/  - Need to create "| " and " |" bookends, which are space-sensitive
+	*/
+
+ public static void main(String[] args) { 
+ Scanner scan = new Scanner(System.in); 
+ String Sentence = scan.nextLine(); 
+ String[] one = Sentence.split(" "); 
+ Boxtext.Sentence(one); 
+ } 
+  
+ private static int MaxLine(String[] Sentence) 
+ { 
+ int MaxLine = 0; 
+ for(int m = 0; m < Sentence.length; m++)  
+ { 
+ if(Sentence[m].length()>MaxLine) 
+ { 
+ MaxLine= Sentence[m].length(); 
+ } 
+  
+ } 
+ return MaxLine; 
+ } 
+  
+ public static void Sentence(String[] MostLetters) { 
+ System.out.print("+"); 
+ int n = Boxtext.MaxLine(MostLetters); 
+ for (int o = 0; o < n + 2; o++) { 
+ System.out.print("-"); 
+ } 
+ System.out.println("+"); 
+ for(int o = 0; o < LongWord.length; o++) { 
+ System.out.print("| " + MostLetters[o]); 
+ for(int p = 0; p <= n - MostLetters[o].length(); p++) 
+ { 
+ System.out.print(" "); 
+  
+ } 
+ System.out.println("|"); 
+ } 
+ System.out.print("+"); 
+ for (int o = 0; o < n + 2; o++) { 
+ System.out.print("-"); 
+ } 
+ System.out.print("+"); 
+ } 
+ } 
+
+
+
+
+
+
+
+
+
+*************Problem 2***************
+
+import java.util.Scanner; 
+  
+ public class Texting { 
+
+	/* Prompt: User input of 7-Digit number. Given a number-letter association:
+
+		2: abc
+		3: def
+		4: ghi
+		5: jkl
+		6: mno
+		7: prs
+		8: tuv
+		9: wxy
+	
+	...determine a way to find all possible strings to replace the given numbers.
+	
+	/  Points of Interest:
+	/  - User Input required
+	/  - String required
+	/  - 
+	/  - 
+	*/ 
+  
+ public static void main(String[] args) 
+ { 
+ Scanner scan = new Scanner(System.in); 
+ String # = scan.nextLine(); 
+ int Digits = #.length(); 
+ int[] numbers = new int[Digits]; 
+  
+ int a = 0; 
+ while (a < Digits) 
+ { 
+ numbers[a] = Character.getNumericValue(#.charAt(a)); 
+ a++; 
+ }
+  
+ String[] association = {" "+" "+" "," "+" "+" ", "abc","def", "ghi", "jkl", "mno","prs","tuv","wxy"}; 
+ for (int b = 0; b < 3; b++) { 
+ int c = 0; 
+ while (c < Digits) { 
+ for (int d = 0; d < Digits; d++) { 
+ if (d == Digits-1) { 
+ System.out.println(association[numbers[j]].charAt(i)); 
+ } 
+ else 
+ { 
+ System.out.print(association[numbers[j]].charAt(i)); 
+ } 
+ } 
+ c++; 
+ } 
+ } 
+ } 
+ }
+
+
+
+
+
+
+*************** Problem Three *************
+
+	/* Tasks: assign numerical values to the letters (roman numerals),
+	/ Acount for user input which yields either 1) an invalid character,
+	/ 2) an auxiliary symbol, 3) a sequence with two consecutive symbols that subtract,
+	/ 4) symbol with value greater than any of the previous additions
+	/*
+
+import java.util.Scanner; 
+  
+ public class RomanNumerals { 
+  
+ private static int value(char ronum) 
+ { 
+ if (ronum == 'I') { 
+ return 1; 
+ } 
+ if (ronum == 'V') { 
+ return 5; 
+ } 
+ if (ronum == 'X') { 
+ return 10; 
+ } 
+ if (ronum == 'L') { 
+ return 50; 
+ } 
+ if (ronum == 'C') { 
+ return 100; 
+ } 
+ if (ronum == 'D') { 
+ return 500; 
+ } 
+ if (ronum == 'M') { 
+ return 1000; 
+ } 
+ return -1; 
+ } 
+  
+1 private static int Convert(String Letters) { 
+ int result = 0; 
+ int[] Roman = new int[Letters.length()]; 
+ for (int a = 0; a < Letters.length(); a++) { 
+  
+ 
+/* From here, we would need to create a series of if-else 
+/ conditions which would produce outputs (ie. "Error: Not all 
+/ characters are valid roman numerals" if the user input is MCMHVII")
+/ that do not yield valid results. We would also need some other
+/ command that could efficiently add the roman numerals. I tried a few
+/ ways of doing this but couldn't get the code to work properly, but 
+/ that's the basic idea.
+/*
